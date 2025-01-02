@@ -13,6 +13,16 @@ public class Main {
             }
         }
 
+        /*
+        int num = 1;
+        
+        // 배열의 숫자를 채웁니다.
+        for(int i = 0; i < n; i++)
+            for(int j = 0; j < n; j++)
+                arr[j][i] = num++;
+
+        */
+
         for(int i = 0; i < n; i++){
             for(int j = 0; j < n; j++){
                 System.out.print(arr[i][j] + " ");
