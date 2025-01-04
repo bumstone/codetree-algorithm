@@ -1,14 +1,18 @@
-import java.util.Scanner;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.IOException;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         // Please write your code here.
-        Scanner sc = new Scanner(System.in);
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        
+        String[]arr = new String[2];
+        arr[0] = br.readLine();
+        arr[1] = br.readLine();
 
-        String str1 = sc.nextLine();
-        String str2 = sc.nextLine();
-
-        StringBuilder sb = new StringBuilder(str1.replaceAll("\\s", "") + str2.replaceAll("\\s", ""));
+        StringBuilder sb = new StringBuilder(arr[0].replaceAll("\\s", "") + arr[1].replaceAll("\\s", ""));
 
         System.out.println(sb.toString());
     }
