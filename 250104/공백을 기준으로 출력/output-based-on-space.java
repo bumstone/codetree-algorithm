@@ -8,11 +8,10 @@ public class Main {
         // Please write your code here.
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         
-        String[]arr = new String[2];
-        arr[0] = br.readLine();
-        arr[1] = br.readLine();
+        String str1 = br.readLine();
+        String str2 = br.readLine();
 
-        StringBuilder sb = new StringBuilder(arr[0].replaceAll("\\s", "") + arr[1].replaceAll("\\s", ""));
+        StringBuilder sb = new StringBuilder(str1.replaceAll("\\s", "") + str2.replaceAll("\\s", ""));
 
         System.out.println(sb.toString());
     }
