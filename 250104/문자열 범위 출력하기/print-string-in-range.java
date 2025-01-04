@@ -10,5 +10,7 @@ public class Main {
         for(int i = 2; i < 10; i++){
             System.out.print(str.charAt(i));
         }
+
+        // System.out.print(str.substring(2, 10));
     }
 }
