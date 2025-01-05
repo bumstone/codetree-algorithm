@@ -18,7 +18,7 @@ public class Main {
             }
         }
 
-        System.out.println(sb.reverse().toString());
+        System.out.println(sb.reverse());
 
     }
 }
