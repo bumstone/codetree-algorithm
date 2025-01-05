@@ -8,7 +8,7 @@ public class Main {
         char c = sc.next().charAt(0);
         int cnt = 0;
 
-        String[] arr = new String[]{"apple", "banana", "grape" "blueberry", "orange"};
+        String[] arr = new String[]{"apple", "banana", "grape", "blueberry", "orange"};
 
         for(int i = 0; i < arr.length; i++){
             if(arr[i].charAt(2) == c || arr[i].charAt(3) == c){
