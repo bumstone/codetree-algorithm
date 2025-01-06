@@ -17,6 +17,6 @@ public class Main {
         }
         
 
-        System.out.println(sb.toString());
+        System.out.println(sb);
     }
 }
