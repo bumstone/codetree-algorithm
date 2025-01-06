@@ -7,11 +7,16 @@ public class Main {
     public static void main(String[] args) throws IOException {
         // Please write your code here.
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringBuilder sb1 = new StringBuilder();
+        StringBuilder sb2 = new StringBuilder();
 
-        String str1 = br.readLine();
-        String str2 = br.readLine();
+        String A = br.readLine();
+        String B = br.readLine();
 
-        if(str2.contains(str1)){
+        sb1.append(A).append(B);
+        sb2.append(B).append(A);
+
+        if(sb1.toString().equals(sb2.toString())){
             System.out.println(true);
         } else {
             System.out.println(false);
