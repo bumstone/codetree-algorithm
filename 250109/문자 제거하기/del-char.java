@@ -12,7 +12,7 @@ public class Main {
         while(str.length() > 1){
             int n = Integer.parseInt(br.readLine());
 
-            if(n > str.length()){
+            if(n >= str.length()){
                 str = str.substring(0, str.length() - 1);
             } else {
                 str = str.substring(0, n) + str.substring(n + 1);
