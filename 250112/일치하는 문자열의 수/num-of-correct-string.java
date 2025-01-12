@@ -7,12 +7,11 @@ public class Main {
 
         int n = sc.nextInt();
         String A = sc.next();
-        sc.nextLine();
 
         
         int cnt = 0;
         for(int i = 0; i < n; i++){
-            String B = sc.nextLine();
+            String B = sc.next();
             if(A.equals(B)){
                 cnt++;
             }
