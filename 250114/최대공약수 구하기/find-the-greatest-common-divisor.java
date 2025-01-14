@@ -17,7 +17,7 @@ public class Main {
 
         int k = n > m ? m : n;
         for(int i = 2; i <= k; i++){
-            if(n % i == 0 && m % i == 0){
+            while(n % i == 0 && m % i == 0){
                 n /= i;
                 m /= i; 
                 result *= i;
