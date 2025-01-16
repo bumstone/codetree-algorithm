@@ -16,9 +16,10 @@ public class Main {
 
     public static boolean isMagicNumber(int n){
         int digitNum = 0;
-        while(n != 0){
-            digitNum += (n % 10);
-            n /= 10;
+        int num = n;
+        while(num != 0){
+            digitNum += (num % 10);
+            num /= 10;
         }
         return n % 2 == 0 && digitNum % 5 == 0;
     }
