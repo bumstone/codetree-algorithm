@@ -32,11 +32,10 @@ public class Main {
             return false;
         }
 
-        for(int i = 0; i < A.length - B.length; i++){
+        for(int i = 0; i <= A.length - B.length; i++){
             boolean found = true;
             for(int j = 0; j < B.length; j++){
                 if(A[i + j] != B[j]){
-
                     found = false;
                     break;
                 }
@@ -45,8 +44,6 @@ public class Main {
                 return true;
             }
         }
-        
-
         return false;
     }
 }
