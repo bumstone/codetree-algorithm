@@ -22,8 +22,8 @@ public class Main {
             y1[i] += 100;
             y2[i] += 100;
 
-            for(int x = x1[i]; x <= x2[i]; x++){
-                for(int y = y1[i]; y <= yx[i]; y++){
+            for(int x = x1[i]; x < x2[i]; x++){
+                for(int y = y1[i]; y < y2[i]; y++){
                     h[x][y]++;
                 }
             }
@@ -32,7 +32,7 @@ public class Main {
         int width = 0;
         for(int i = 0; i < 201; i++){
             for(int j = 0; j < 201; j++){
-                if(h[x][y] == 0) continue;
+                if(h[i][j] == 0) continue;
                 width++;
             }
         }
