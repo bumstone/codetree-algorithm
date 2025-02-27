@@ -9,23 +9,24 @@ public class Main {
         int eclapsed_time = 0;
         int day = 11, hour = 11, min = 11;
 
-        while(true){
-            if(day == A && hour == B && min == C){
-                break;
-            }
+        // while(true){
+        //     if(day == A && hour == B && min == C){
+        //         break;
+        //     }
 
-            eclapsed_time++;
-            min++;
+        //     eclapsed_time++;
+        //     min++;
 
-            if(min == 60){
-                min = 0;
-                hour++;
-            }
-            if(hour==24){
-                hour = 0;
-                day++;
-            }
-        }
+        //     if(min == 60){
+        //         min = 0;
+        //         hour++;
+        //     }
+        //     if(hour==24){
+        //         hour = 0;
+        //         day++;
+        //     }
+        // }
+        eclapsed_time += (A - 11) * 24 * 60 + (B - 11) * 60 + (C - min);
         
         System.out.print(eclapsed_time);
 
