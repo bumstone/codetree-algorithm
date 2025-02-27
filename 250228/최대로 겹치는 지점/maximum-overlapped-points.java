@@ -17,9 +17,9 @@ public class Main {
         }
         // Please write your code here.
         int answer = 1;
-        for(int i =0; i < h.length; i++){
-            if(h[i] == 1){
-                answer++;
+        for(int i = 0; i < h.length; i++){
+            if(answer < h[i]){
+                answer = h[i];
             }
         }
 
