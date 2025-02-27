@@ -6,7 +6,7 @@ public class Main {
         int B = sc.nextInt();
         int C = sc.nextInt();
         // Please write your code here.
-        int eclapsed_time = 0;
+        int elapsed_time = 0;
         int day = 11, hour = 11, min = 11;
 
         // while(true){
@@ -14,7 +14,7 @@ public class Main {
         //         break;
         //     }
 
-        //     eclapsed_time++;
+        //     elapsed_time++;
         //     min++;
 
         //     if(min == 60){
@@ -26,7 +26,7 @@ public class Main {
         //         day++;
         //     }
         // }
-        eclapsed_time += (A - 11) * 24 * 60 + (B - 11) * 60 + (C - min);
+        elapsed_time += (A - 11) * 24 * 60 + (B - 11) * 60 + (C - min);
         
         if (elapsed_time < 0) {
             System.out.println(-1);
