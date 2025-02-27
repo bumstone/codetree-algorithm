@@ -28,7 +28,10 @@ public class Main {
         // }
         eclapsed_time += (A - 11) * 24 * 60 + (B - 11) * 60 + (C - min);
         
-        System.out.print(eclapsed_time);
-
+        if (elapsed_time < 0) {
+            System.out.println(-1);
+        } else {
+            System.out.println(elapsed_time);
+        }
     }
 }
