@@ -30,7 +30,7 @@ public class Main {
                 }
             }
 
-            if(cnt >= 3){
+            if(cnt == 3){
                 System.out.println(1);
             } else {
                 System.out.println(0);
