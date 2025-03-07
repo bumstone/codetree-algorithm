@@ -7,11 +7,8 @@ public class Main {
 
         int count = 0;
         for(int i = 0; i < str.length(); i++){
-            if(str.charAt(i) != '(') continue;
             for(int j = i + 1; j < str.length(); j++){
-                if(str.charAt(j) != ')') continue;
-
-                count++;
+                if(str.charAt(i) == '(' && str.charAt(j) == ')') count++;
             }
         }
         System.out.print(count);
