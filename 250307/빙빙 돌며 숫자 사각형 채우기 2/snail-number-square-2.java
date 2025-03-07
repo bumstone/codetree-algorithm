@@ -15,7 +15,7 @@ public class Main {
         // Please write your code here.
         int x = 0, y = 0;
         int dir = 0;
-        int[][] arr = new int[n][n];
+        int[][] arr = new int[n][m];
         for(int i = 1; i <= n * m; i++) { // 숫자 i를 어디에 적을지 결정합니다.
             // 현재 방향 dir를 기준으로 그 다음 위치 값을 계산합니다.
             int nextX = x + dx[dir], nextY = y + dy[dir];
