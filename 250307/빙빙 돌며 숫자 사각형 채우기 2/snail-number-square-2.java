@@ -17,7 +17,6 @@ public class Main {
         int dir = 0;
         int[][] arr = new int[n][n];
         for(int i = 1; i <= n * m; i++) { // 숫자 i를 어디에 적을지 결정합니다.
-            arr[x][y] = i;
             // 현재 방향 dir를 기준으로 그 다음 위치 값을 계산합니다.
             int nextX = x + dx[dir], nextY = y + dy[dir];
 
@@ -25,7 +24,7 @@ public class Main {
             // 시계방향으로 90'를 회전합니다.
             if(!inRange(nextX, nextY) || arr[nextX][nextY] != 0)
                 dir = (dir + 1) % 4;
-
+            arr[x][y] = i;
             // 그 다음 위치로 이동한 다음 배열에 올바른 값을 채워넣습니다.
             x += dx[dir]; 
             y +=dy[dir];
