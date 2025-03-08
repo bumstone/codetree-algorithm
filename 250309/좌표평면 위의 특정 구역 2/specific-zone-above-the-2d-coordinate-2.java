@@ -10,7 +10,7 @@ public class Main {
             y[i] = sc.nextInt();
         }
         // Please write your code here.
-        int result = 0;
+        int result = Integer.MAX_VALUE;
         for(int i = 0; i < n; i++){
             int maxX = 1, maxY = 1;
             int minX = 10000, minY = 10000;
