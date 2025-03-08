@@ -21,7 +21,8 @@ public class Main {
                 minX = Math.min(minX, x[j]);
                 minY = Math.min(minY, y[j]);
             }
-            result = (maxX - minX) * (maxY - minY);
+            result = Math.min(result, (maxX - minX) * (maxY - minY));
+
         }
 
         System.out.print(result);
