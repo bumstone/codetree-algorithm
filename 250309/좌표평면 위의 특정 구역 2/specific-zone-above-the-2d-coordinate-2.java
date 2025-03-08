@@ -13,7 +13,7 @@ public class Main {
         int result = Integer.MAX_VALUE;
         for(int i = 0; i < n; i++){
             int maxX = 1, maxY = 1;
-            int minX = 10000, minY = 10000;
+            int minX = 40000, minY = 40000;
             for(int j = 0; j < n; j++){
                 if(i == j) continue;
                 maxX = Math.max(maxX, x[j]);
