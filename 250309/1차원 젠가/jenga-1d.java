@@ -39,6 +39,9 @@ public class Main {
         }
 
         System.out.println(L);
+        if(L == 0){
+            return;
+        }
         for(int num : arr){
             System.out.println(num);
         }
