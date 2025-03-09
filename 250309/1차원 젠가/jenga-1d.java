@@ -18,31 +18,30 @@ public class Main {
         int L = n;
         
         for (int i = 0; i < 2; i++) {
-            int blocks_n = 0;
-            for (int j = s[i]; j <= e[i]; j++) {
-                if(blocks[j + blocks_n] == 0){
-                    blocks_n++;
-                    j--;
-                    continue;
-                }
-                blocks[j + blocks_n] = 0;
-                L--;
-            }
-        }
+            int start = s[i];
+            int end = e[i];
 
-        int[] arr = new int[L];
-        int cnt = 0;
-        for (int j = 0; j < n; j++) {
-            if (blocks[j] != 0) {
-                arr[cnt++] = blocks[j];
+            if (start >= L) continue;
+            if (end >= L) end = L - 1;
+
+            int[] temp = new int[L - (end - start + 1)];
+            int idx = 0;
+            for (int j = 0; j < L; j++) {
+                if (j < start || j > end) {
+                    temp[idx++] = blocks[j];
+                }
+            }
+            blocks = temp;
+            L = temp.length;
+
+            if (L == 0) {
+                System.out.println(0);
+                return;
             }
         }
 
         System.out.println(L);
-        if(L == 0){
-            return;
-        }
-        for(int num : arr){
+        for(int num : blocks){
             System.out.println(num);
         }
 
