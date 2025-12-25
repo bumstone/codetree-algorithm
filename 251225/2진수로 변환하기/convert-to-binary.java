@@ -4,7 +4,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         // Please write your code here.
-        int[] digits = new int[15];
+        int[] digits = new int[20];
         int cnt = 0;
 
         while(true){
