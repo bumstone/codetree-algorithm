@@ -5,26 +5,28 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int N = sc.nextInt();
-        int current = 100 * N;
+        int current= 100 * N;
         int[] check = new int[200 * N + 1];
-        // int[] checkW = new int[200 * N + 1];
-        // int[] checkB = new int[200 * N + 1];
+        int[] checkW = new int[200 * N + 1];
+        int[] checkB = new int[200 * N + 1];
 
         char[] d = new char[N];
         for (int i = 0; i < N; i++) {
             int x = sc.nextInt();
             d[i] = sc.next().charAt(0);
-
+            
             if(d[i] == 'R'){
                 for(int j = current; j < current + x; j++){
                     check[j]++;
+                    checkW[j]++;
                 }
-                current += x;
+                current += x - 1;
             } else if(d[i] == 'L'){
-                for(int j = current - x; j < current; j++){
+                for(int j = current; j > current - x; j--){
                     check[j]++;
+                    checkB[j]++;
                 }
-                current -= x;
+                current -= x - 1;
             }
 
         }
@@ -33,11 +35,10 @@ public class Main {
         int blackCnt = 0;
         int grayCnt = 0;
         for(int i = 0; i < check.length; i++){
-            if(check[i] >= 4) grayCnt++;
-            else if(check[i] <= 0) continue;
-            else if(i < current) blackCnt++;
-            else if(i > current) whiteCnt++; 
-            else if(i == current) {
+            if(checkW[i] >= 2 && checkB[i] >= 2) grayCnt++;
+            else if(i < current && check[i] > 0) blackCnt++;
+            else if(i > current && check[i] > 0) whiteCnt++; 
+            else if(i == current && check[i] > 0) {
                 if(d[d.length - 1] == 'R') blackCnt++;
                 if(d[d.length - 1] == 'L') whiteCnt++;
             }
