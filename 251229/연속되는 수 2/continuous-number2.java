@@ -19,6 +19,7 @@ public class Main {
             if(max < cnt){
                 max = cnt;
             }
+            cnt = 1;
         }
 
         System.out.println(max);
