@@ -8,8 +8,8 @@ public class Main {
         for (int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
         }
-        // Please write your code here.
-        int max = 0;
+
+        int max = 1;
         int cnt = 0;
         for(int i = 0; i < n; i++){
             if(i == 0 || arr[i] == arr[i-1]){
@@ -22,6 +22,7 @@ public class Main {
             cnt = 1;
         }
 
+        max = Math.max(max, cnt);
         System.out.println(max);
     }
 }
