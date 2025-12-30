@@ -12,47 +12,43 @@ public class Main {
         int[] A = new int[n * 2000 + 1];
         int[] B = new int[m * 2000 + 1];
         int sumTime = 0;
-        int idx = 0;
+        int idx = 1;
         for(int i = 0; i < n; i++){
             char d = sc.next().charAt(0);
             int t = sc.nextInt();
             sumTime += t;
             
-            if(d == 'R'){
+            if(d == 'R') {
                 while(t-- > 0){
-                    A[idx++] = cur;
-                    if(t > 0) cur++;
+                    A[idx++] = ++cur;
                 }
-            } else if(d == 'L'){
+            } else if(d == 'L') {
                 while(t-- > 0){
-                    A[idx++] = cur;
-                    if(t > 0) cur--;
+                    A[idx++] = --cur;
                 }
             }
         }
 
-        idx = 0;
+        idx = 1;
         cur = 0;
         for(int i = 0; i < m; i++){
             char d = sc.next().charAt(0);
             int t = sc.nextInt();
             
-            if(d == 'R'){
+            if(d == 'R') {
                 while(t-- > 0){
-                    B[idx++] = cur;
-                    if(t > 0) cur++;
+                    B[idx++] = ++cur;
                 }
-            } else if(d == 'L'){
+            } else if(d == 'L') {
                 while(t-- > 0){
-                    B[idx++] = cur;
-                    if(t > 0) cur--;
+                    B[idx++] = --cur;
                 }
             }
         }
 
         for(int i = 1; i <= sumTime; i++){
             if(A[i] == B[i]){
-                System.out.println(i + 1);
+                System.out.println(i);
                 return; 
             }
         }
