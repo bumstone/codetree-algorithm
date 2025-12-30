@@ -19,9 +19,11 @@ public class Main {
         
         int person = -1;
         for (int i = 0; i < m; i++) {
-            person = penalizedPerson[i];
-            save[person]--;
-            if(save[person] <= 0) break;
+            save[penalizedPerson[i]]--;
+            if(save[penalizedPerson[i]] <= 0) {
+                person = penalizedPerson[i];
+                break;
+            }
         }
 
         System.out.println(person);
