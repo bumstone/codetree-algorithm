@@ -1,13 +1,13 @@
 import java.util.Scanner;
 
 public class Main {
-    public static final int MAX = 1000000;
+    public static final int MAX = 1000001;
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int m = sc.nextInt();
-        int sumTime = 1;
+        int timeA = 1;
         int[] robotA = new int[MAX];
         int[] robotB = new int[MAX];
         
@@ -17,39 +17,60 @@ public class Main {
             
             while(t-- > 0){
                 if(d == 'R'){
-                    robotA[sumTime] = robotA[sumTime - 1] + 1;
-                    sumTime++;
+                    robotA[timeA] = robotA[timeA - 1] + 1;
+                    timeA++;
                 } else {
-                    robotA[sumTime] = robotA[sumTime - 1] - 1;
-                    sumTime++;
+                    robotA[timeA] = robotA[timeA - 1] - 1;
+                    timeA++;
                 }
             }
         }
         
-        sumTime = 1;
+        int timeB = 1;
         for (int i = 0; i < m; i++) {
             int t = sc.nextInt();
             char d = sc.next().charAt(0);
             
             while(t-- > 0){
                 if(d == 'R'){
-                    robotB[sumTime] = robotB[sumTime - 1] + 1;
-                    sumTime++;
+                    robotB[timeB] = robotB[timeB - 1] + 1;
+                    timeB++;
                 } else {
-                    robotB[sumTime] = robotB[sumTime - 1] - 1;
-                    sumTime++;
+                    robotB[timeB] = robotB[timeB - 1] - 1;
+                    timeB++;
                 }
             }
         }
-        
+
         int cnt = 0;
-        for(int i = 1; i <= sumTime; i++){
-            if((robotA[i] == robotB[i]) && (robotA[i-1] != robotB[i-1])){
-
-                cnt++;
+        if(timeA > timeB){
+            int idx = timeB;
+            int same = robotB[timeB - 1];
+            for(int i = 0; i < timeA - timeB; i++){
+                robotB[idx++] = same;
             }
-        }
 
+            
+            for(int i = 1; i < timeA; i++){
+                if((robotA[i] == robotB[i]) && (robotA[i-1] != robotB[i-1])){
+                    cnt++;
+                }
+            }
+        } else {
+            int idx = timeA;
+            int same = robotA[timeA - 1];
+            for(int i = 0; i < timeB - timeA; i++){
+                robotA[idx++] = same;
+            }
+
+            for(int i = 1; i < timeB; i++){
+                if((robotA[i] == robotB[i]) && (robotA[i-1] != robotB[i-1])){
+                    cnt++;
+                }
+            }
+
+        }
+        
         System.out.println(cnt);
     }
 }
