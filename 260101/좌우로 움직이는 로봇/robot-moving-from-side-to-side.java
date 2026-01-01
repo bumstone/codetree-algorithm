@@ -43,7 +43,7 @@ public class Main {
         int cnt = 0;
 
         if(timeA > timeB){
-            for(int i = timeB; i < timeA - timeB; i++){
+            for(int i = timeB; i < timeA; i++){
                 robotB[i] = robotB[i -1];
             }
 
@@ -53,7 +53,7 @@ public class Main {
                 }
             }
         } else {
-            for(int i = timeA; i < timeB - timeA; i++){
+            for(int i = timeA; i < timeB; i++){
                 robotA[i] = robotA[i-1];
             }
 
