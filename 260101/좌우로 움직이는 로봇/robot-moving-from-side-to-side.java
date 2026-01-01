@@ -18,11 +18,10 @@ public class Main {
             while(t-- > 0){
                 if(d == 'R'){
                     robotA[timeA] = robotA[timeA - 1] + 1;
-                    timeA++;
                 } else {
                     robotA[timeA] = robotA[timeA - 1] - 1;
-                    timeA++;
                 }
+                timeA++;
             }
         }
         
@@ -34,33 +33,28 @@ public class Main {
             while(t-- > 0){
                 if(d == 'R'){
                     robotB[timeB] = robotB[timeB - 1] + 1;
-                    timeB++;
                 } else {
                     robotB[timeB] = robotB[timeB - 1] - 1;
-                    timeB++;
                 }
+                timeB++;
             }
         }
 
         int cnt = 0;
+
         if(timeA > timeB){
-            int idx = timeB;
-            int same = robotB[timeB - 1];
-            for(int i = 0; i < timeA - timeB; i++){
-                robotB[idx++] = same;
+            for(int i = timeB; i < timeA - timeB; i++){
+                robotB[i] = robotB[i -1];
             }
 
-            
             for(int i = 1; i < timeA; i++){
                 if((robotA[i] == robotB[i]) && (robotA[i-1] != robotB[i-1])){
                     cnt++;
                 }
             }
         } else {
-            int idx = timeA;
-            int same = robotA[timeA - 1];
-            for(int i = 0; i < timeB - timeA; i++){
-                robotA[idx++] = same;
+            for(int i = timeA; i < timeB - timeA; i++){
+                robotA[i] = robotA[i-1];
             }
 
             for(int i = 1; i < timeB; i++){
