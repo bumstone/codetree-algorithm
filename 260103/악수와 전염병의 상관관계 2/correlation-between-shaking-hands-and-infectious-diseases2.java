@@ -41,9 +41,11 @@ public class Main {
         }
 
 
-        for(int j = 0; j < N; j++){
-            System.out.print(result[j]);
+        StringBuilder sb = new StringBuilder();
+        for (int res : isInfected) {
+            sb.append(res);
         }
+        System.out.println(sb.toString());
     }
 }
 
