@@ -24,43 +24,20 @@ public class Main {
         int[] kCnt = new int[N];    // 전염 가능 남은 횟수 
 
 
-        int i = 0;
-        while (i < T) {
-            int curT = shakes[i].t;
-            int j = i;
-            boolean[] toInfect = new boolean[N];
+        for (int i = 0; i < T; i++) {
+            int x = shakes[i].x;
+            int y = shakes[i].y;
+            boolean xIsInfected = (result[x] == 1);
+            boolean yIsInfected = (result[y] == 1);
 
-            while (j < T && shakes[j].t == curT) j++;
-
-            for (int idx = i; idx < j; idx++) {
-                int a = shakes[idx].x;
-                int b = shakes[idx].y;
-
-                if (result[a] == 1 && kCnt[a] < K) {
-                    kCnt[a]++;
-                    if (result[b] == 0) {
-                        toInfect[b] = true;
-                        result[b] = 1;
-                    } 
-                }
-
-                if (result[b] == 1 && kCnt[b] < K) {
-                    kCnt[b]++;
-                    if (result[a] == 0) {
-                        toInfect[a] = true;
-                        result[a] = 1;
-                    } 
-                }
+            if(xIsInfected && kCnt[x] < K){
+                result[y] = 1;
+                kCnt[x]++;
             }
-
-            // 이 시간 끝나고 감염 반영 + 사용횟수 초기화
-            for (int p = 0; p < N; p++) {
-                if (toInfect[p] && result[p] == 0) {
-                    result[p] = 1;
-                }
+            if(yIsInfected && kCnt[y] < K){
+                result[x] = 1;
+                kCnt[y]++;
             }
-
-            i = j;
         }
 
 
