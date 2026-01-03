@@ -42,7 +42,7 @@ public class Main {
 
 
         StringBuilder sb = new StringBuilder();
-        for (int res : isInfected) {
+        for (int res : result) {
             sb.append(res);
         }
         System.out.println(sb.toString());
