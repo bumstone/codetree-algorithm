@@ -1,5 +1,4 @@
-import java.util.Scanner;
-import java.util.Arrays;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -9,24 +8,23 @@ public class Main {
         int P = sc.nextInt();   // 처음 전염병에 걸린 개발자의 번호 
         int T = sc.nextInt();   // t초에 x, y 개발자가 악수를 한 횟수
         
-        Shake[] shakes = new Shake[T];
+        List<Shake> shakes = new ArrayList<Shake>();
         for (int i = 0; i < T; i++) {
             int t = sc.nextInt();
             int x = sc.nextInt();
             int y = sc.nextInt();
-            shakes[i] = new Shake(t, x - 1, y - 1);
+            shakes.add(new Shake(t, x - 1, y - 1));
         }
         
-        Arrays.sort(shakes, (a, b) -> a.t - b.t);
+        Collections.sort(shakes);
         
         int[] result = new int[N];
         result[P-1] = 1;
         int[] kCnt = new int[N];    // 전염 가능 남은 횟수 
 
-
-        for (int i = 0; i < T; i++) {
-            int x = shakes[i].x;
-            int y = shakes[i].y;
+        for (Shake s : shakes) {
+            int x = s.x;
+            int y = s.y;
             boolean xIsInfected = (result[x] == 1);
             boolean yIsInfected = (result[y] == 1);
 
@@ -41,19 +39,22 @@ public class Main {
         }
 
 
-        StringBuilder sb = new StringBuilder();
-        for (int res : result) {
-            sb.append(res);
+        for(int j = 0; j < N; j++){
+            System.out.print(result[j]);
         }
-        System.out.println(sb.toString());
     }
 }
 
-class Shake {
+class Shake implements Comparable<Shake> {
     int t, x, y;
     Shake(int t, int x, int y) {
         this.t = t;
         this.x = x;
         this.y = y;
+    }
+
+    @Override
+    public int compareTo(Shake s){
+        return Integer.compare(this.t, s.t);
     }
 }
