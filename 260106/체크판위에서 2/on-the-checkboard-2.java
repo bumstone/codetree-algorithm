@@ -11,8 +11,8 @@ public class Main {
             }
         }
         
-        int count1 = 0, count2 = 0;
         char curColor = grid[0][0];
+        char endColor = grid[R - 1][C - 1];
         int ans = 0;
         // 도약 2번 
         for(int i = 1; i < R - 2; i++){
@@ -22,7 +22,8 @@ public class Main {
                     for(int k = i + 1; k < R - 1; k++){
                         for(int l = j + 1; l < C - 1; l++){
                             if(curColor != grid[k][l]){
-                                count2++;
+                                curColor = grid[k][l];
+                                if(curColor != endColor) ans++;
                             }
                         }
                     }
@@ -31,6 +32,6 @@ public class Main {
             }
         }
 
-        System.out.print(count2);
+        System.out.print(ans);
     }
 }
