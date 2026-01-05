@@ -11,19 +11,15 @@ public class Main {
             }
         }
         
-        char curColor = grid[0][0];
-        char endColor = grid[R - 1][C - 1];
         int ans = 0;
         // 도약 2번 
         for(int i = 1; i < R - 2; i++){
             for(int j = 1; j < C - 2; j++){
-                if(curColor != grid[i][j]){
-                    curColor = grid[i][j];
+                if(grid[0][0] != grid[i][j]){
                     for(int k = i + 1; k < R - 1; k++){
                         for(int l = j + 1; l < C - 1; l++){
-                            if(curColor != grid[k][l]){
-                                curColor = grid[k][l];
-                                if(curColor != endColor) ans++;
+                            if(grid[i][j] != grid[k][l] && grid[k][l] != grid[R - 1][C - 1]){
+                                ans++;
                             }
                         }
                     }
