@@ -20,7 +20,6 @@ public class Main {
         int N = 0;
         for(int i = 0; i < a.length; i++){
             N = N * 2 + (a[i] - '0');
-            System.out.println(a[i]);
         }
         System.out.print(N);
     }
