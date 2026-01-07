@@ -14,7 +14,7 @@ public class Main {
         }
 
         if(!one) {
-            a[a.length - 1] = 0;
+            a[a.length - 1] = '0';
         }
 
         int N = 0;
