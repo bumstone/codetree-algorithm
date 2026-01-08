@@ -12,9 +12,9 @@ public class Main {
         }
         
         int ans = Integer.MAX_VALUE;
-        for(int i = 0; i < n - t; i++){
+        for(int i = 0; i <= n - t; i++){
             int sum = 0;
-            for(int j = i; j <= i + t; j++){
+            for(int j = i; j < i + t; j++){
                 sum += Math.abs(h - arr[j]);
             }
             ans = Math.min(ans, sum);
