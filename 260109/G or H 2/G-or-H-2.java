@@ -31,12 +31,11 @@ public class Main {
             for(int j = i; j <= MAX_NUM; j++) {
                 if(arr[j] == 1){
                     gCnt++;
-
                 } else if(arr[j] == 2){
                     hCnt++;
-                } else continue;
+                } else continue;    // 사람이 없는 경우 거리 측정 전에 패스
 
-                if(gCnt > 0 && hCnt > 0 && gCnt == hCnt) {
+                if(gCnt == 0 || hCnt == 0 || gCnt == hCnt) {
                     size = j - i;
                 }
             }
