@@ -13,9 +13,9 @@ public class Main {
             int sum = 0;
             for(int j = i; j < n; j++){
                 sum += arr[j];
-                if(sum % (j - i + 1) != 0) continue;
+                double avg = (double)sum / (j - i + 1);
                 for(int k = i; k <= j; k++){
-                    if(sum / (j - i + 1) == arr[k]) {
+                    if(avg == arr[k]) {
                         cnt++;
                         break;
                     }
