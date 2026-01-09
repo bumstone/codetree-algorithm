@@ -21,7 +21,7 @@ public class Main {
         
         int cnt = 250;
         if(n <= 5){
-            cnt = n * n * n * 2;
+            cnt = n * n * n;
             System.out.print(cnt);
             return;
         } 
