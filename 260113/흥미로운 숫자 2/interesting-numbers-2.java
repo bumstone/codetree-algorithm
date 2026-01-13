@@ -9,12 +9,15 @@ public class Main {
             n /= 10;
         }
         int cnt = 0;
+        boolean check = false;
         for(int i = 0; i < 10; i++){
-            if(counting[i] > 0) cnt++;
-            if(counting[i] == 1) cnt -= 2;
+            if(counting[i] > 0) {
+                cnt++;
+                if(counting[i] == 1) check = true;
+            }
         }
 
-        return cnt == 0;
+        return cnt == 2 && check;
     }
 
     public static void main(String[] args) {
