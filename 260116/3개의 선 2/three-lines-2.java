@@ -11,7 +11,6 @@ public class Main {
             y[i] = sc.nextInt();
         }
         
-        boolean result = false;
         // x, x, x / x, x, y / x, y, y / y, y, y (기울기 같고 값이 같은 경우 스킵)
         for(int f = 0; f < 4; f++){
             for(int i = 0; i <= 10; i++){
@@ -21,20 +20,29 @@ public class Main {
                         if((f == 0 || f == 3) && (i == k || j == k)) continue;
                         if(f == 2 && j == k) continue;
 
-                        boolean check = true;
+                        boolean result = true;
+                        
                         for(int l = 0; l < n; l++){
-                            if(f == 0)
-                                if(i != x[l] || j != x[l] || k != x[i]) check = false;
-                            else if(f == 1)
-                                if(i != x[l] || j != x[l] || k != y[i]) check = false;
-                            else if(f == 2)
-                                if(i != x[l] || j != y[l] || k != y[i]) check = false;
-                            else
-                                if(i != y[l] || j != y[l] || k != y[i]) check = false;
+                            boolean check = false;
+
+                            if(f == 0){
+                                if(i == x[l] || j == x[l] || k == x[l]) check = true;
+                            }else if(f == 1){
+                                if(i == x[l] || j  == x[l] || k == y[l]) check = true;
+                            }else if(f == 2) {
+                                if(i == x[l] || j == y[l] || k == y[l]) check = true;
+                            }else {
+                                if(i == y[l] || j == y[l] || k == y[l]) check = true;
+                            }
+                                
+                            if(!check) {
+                                result = false;
+                                break;
+                            }
+                            
                         }
 
-                        if(check){
-                            result = true;
+                        if(result){
                             System.out.print(1);
                             return;
                         }
