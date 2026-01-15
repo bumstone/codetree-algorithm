@@ -9,10 +9,9 @@ public class Main {
         int ans = 0;
         int n = C / B;
         int m = C / A;
-
         for(int i = 0; i <= n; i++){
             for(int j = 0; j <= m; j++){
-                int sum = i * A + j * B;
+                int sum = j * A + i * B;
                 if(sum > C) break;
                 ans = Math.max(ans, sum);
             }
