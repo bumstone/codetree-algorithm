@@ -13,10 +13,16 @@ public class Main {
         for(int i = 0; i < n; i++){
             arr[i] *= 2;
             for(int j = 0; j < n; j++){
-                int sum = 0;
+                int[] remainingArr = new int[n-1];
+                int idx = 0;
                 for(int k = 0; k < n; k++){
-                    if(j == k || k == n - 1) continue;
-                    sum += Math.abs(arr[k + 1] - arr[k]);
+                    if(k == j) continue;
+                    remainingArr[idx++] = arr[k];
+                }
+
+                int sum = 0;
+                for(int k = 0; k < n - 2; k++) {
+                    sum += Math.abs(remainingArr[k + 1] - remainingArr[k]);
                 }
                 min = Math.min(min, sum);
             }
