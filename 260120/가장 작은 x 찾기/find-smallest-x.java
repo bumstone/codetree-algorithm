@@ -9,6 +9,7 @@ public class Main {
             a[i] = sc.nextInt();
             b[i] = sc.nextInt();
         }
+        
         int min = 10000;
         for(int i = 1; i <= 5000; i++){
             int x = i;
@@ -18,9 +19,12 @@ public class Main {
                 if(a[j] > x || b[j] < x){
                     check = false;
                     break;
-                } 
+                }
             }
-            if(check) min = i;
+            if(check){
+                min = i;
+                break;
+            }
         }
 
         System.out.print(min);
