@@ -6,6 +6,10 @@ public class Main {
         int n = sc.nextInt();
         int k = sc.nextInt();
         int[] bombs = new int[n + 2*k];
+        for(int i = 0; i < k; i++)
+            bombs[i] = -1;
+        for(int i = n + k; i < n + 2 * k; i++)
+            bombs[i] = -1;        
         for (int i = k; i < n + k; i++)
             bombs[i] = sc.nextInt();
         
@@ -13,7 +17,7 @@ public class Main {
         int max = 0;
         for(int i = k; i < n + k; i++){
             int start = i - k, end = i + k;
-            int cnt = -1;
+            int cnt = -2;
             for(int j = start; j <= end; j++){
                 if(bombs[i] == bombs[j]){
                     cnt++;
