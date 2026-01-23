@@ -23,6 +23,9 @@ public class Main {
                 max = cnt;
                 bombNum = bombs[i];
             }
+            else if(max == cnt){
+                bombNum = Math.max(bombNum, bombs[i]);
+            }
         }
 
         System.out.print(bombNum);
