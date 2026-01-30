@@ -24,11 +24,11 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         n = sc.nextInt();
         m = sc.nextInt();
-        int low = Integer.MAX_VALUE, high = 0;
+        int low = 0, high = 0;
         for (int i = 0; i < n; i++){
             nums[i] = sc.nextInt();
 
-            low = Math.min(low, nums[i]);
+            low = Math.max(low, nums[i]);
             high += nums[i];
         }
             
