@@ -9,17 +9,18 @@ public class Main {
         int sec = 0;
 
         while(true){
-            if(sum > x/2) break;
+            if(sum >= x/2) break;
             sum += speed++;
             sec++;
         }
         speed--;
         while(true){
-            if(sum > x) break;
-            sum += --speed;
+            if(sum >= x) break;
+            speed--;
+            sum += speed;
+            if(speed == 1) speed++;
             sec++;
         }
-
 
         System.out.print(sec);
     }
