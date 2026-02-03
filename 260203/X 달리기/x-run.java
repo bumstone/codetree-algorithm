@@ -4,24 +4,14 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int x = sc.nextInt();
         
-        int speed = 1;
-        int sum = 0;
-        int sec = 0;
+        int n = (int) Math.sqrt(x);
 
-        while(true){
-            if(sum >= x/2) break;
-            sum += speed++;
-            sec++;
+        if (x == n * n) {
+            System.out.print(2 * n - 1);
+        } else if (x <= n * n + n) {
+            System.out.print(2 * n);
+        } else {
+            System.out.print(2 * n + 1);
         }
-        speed--;
-        while(true){
-            if(sum >= x) break;
-            speed--;
-            sum += speed;
-            if(speed == 1) speed++;
-            sec++;
-        }
-
-        System.out.print(sec);
     }
 }
