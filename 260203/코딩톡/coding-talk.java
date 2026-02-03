@@ -15,11 +15,13 @@ public class Main {
         }
         
         boolean[] Read = new boolean[n];
-        if(u[p] == 0) return;
-        for(int i = p - 1; i < m; i++){
-            Read[(int)c[i] - 'A'] = true;
+        if(u[p - 1] == 0) return;
+        for(int i = 0; i < m; i++){
+            if(u[i] == u[p - 1]){
+                Read[c[i] - 'A'] = true;
+            } else if(i >= p - 1) 
+                Read[c[i] - 'A'] = true;
         }
-
 
         for(int i = 0; i < n; i++){
             if (!Read[i]) {
