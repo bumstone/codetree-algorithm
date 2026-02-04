@@ -20,12 +20,12 @@ public class Main {
                 minMovement++;
                 break;
             }
-            if(Math.abs(b - a) > Math.abs(c - b)){
-                a = b;
-                b = b + 1;
-            } else if(Math.abs(b - a) <= Math.abs(c - b)){
+            if(b - a > c - b){
                 c = b;
-                b = b - 1;
+                b = c - 2;
+            } else if(b - a <= c - b){
+                a = b;
+                b = b + 2;
             }
 
             minMovement++;
