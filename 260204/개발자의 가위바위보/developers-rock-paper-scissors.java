@@ -11,9 +11,8 @@ public class Main {
         }
         
         int[][] permutations = {
-            {1, 2, 3}, {1, 3, 2}, {2, 1, 3}, {2, 3, 1}, {3, 1, 2}, {3, 2, 1}
+            {1, 2, 3}, {1, 3, 2}
         };
-
 
         int maxWins = 0;
         for (int[] p : permutations) {
