@@ -16,7 +16,7 @@ public class Main {
                 yL = board[i].indexOf('L');
             }
         }
-        int minDist = Math.abs(xL - xB) + Math.abs(yL - yB) - 1;
+        int minDist = Math.abs(xL - xB) + Math.abs(yL - yB);
 
         System.out.print(minDist);
     }
