@@ -12,16 +12,16 @@ public class Main {
 
             if(c == 'A'){
                 A += s;
-                if(s > 0 && winner < A){
+                if(s > 0 && winner <= A){
                     cnt++;
                     winner = A;
-                } else if(s < 0 && winner - s == A && A < B) cnt++;
+                } else if(s < 0 && winner - s == A && A <= B) cnt++;
             } else {
                 B += s;
-                if(s > 0 && winner < B){
+                if(s > 0 && winner <= B){
                     cnt++;
                     winner = B;
-                } else if(s < 0 && winner - s == B && B < A) cnt++;
+                } else if(s < 0 && winner - s == B && B <= A) cnt++;
             }
 
         }
