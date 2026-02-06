@@ -29,7 +29,7 @@ public class Main {
                     winner = A;
                 }
             }
-
+            winner = Math.max(A, B);
         }
 
         System.out.print(cnt);
