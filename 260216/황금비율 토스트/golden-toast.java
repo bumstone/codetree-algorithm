@@ -34,7 +34,6 @@ public class Main {
                 char word = sc.next().charAt(0);
                 it.add(word);
             }
-            sc.nextLine();
         }
         
         // 전체 출력
